@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fff9ef">
+    <meta name="description" content="いろをえらんで、すきなえをカラフルにぬろう！3〜6さい向けのお絵かきゲーム「いろあそび」です。">
+    <title>いろあそび｜すきなえをカラフルにぬろう！</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/guides.js" defer></script>
+    <script src="./js/app.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="いろあそび ホーム">
+        <span class="brand-mark" aria-hidden="true">🎨</span>
+        <span>いろあそび</span>
+      </a>
+      <span class="age-label">3〜6さい</span>
+    </header>
+
+    <main class="page-content">
+      <section class="intro" aria-labelledby="page-title">
+        <p class="eyebrow">きょうは なにいろにする？</p>
+        <h1 id="page-title">すきなえを<br class="mobile-break">カラフルにぬろう！</h1>
+        <p>いろをえらんで、すきなところにぬってみよう。<br class="desktop-break">
+          いろのくみあわせをたのしんで、じぶんだけのえをつくってね。</p>
+      </section>
+
+      <section class="play-card" aria-label="おえかき">
+        <div class="workspace">
+          <div class="drawing-area">
+            <div class="canvas-heading">
+              <h2><span aria-hidden="true">🖍️</span> おえかきキャンバス</h2>
+              <button class="clear-button" id="clearButton" type="button">
+                <span aria-hidden="true">🧹</span> ぜんぶけす
+              </button>
+            </div>
+            <div class="canvas-frame">
+              <canvas id="drawingCanvas" aria-label="ここにゆびやマウスで絵をかこう"></canvas>
+              <svg id="guideOverlay" class="guide-overlay" viewBox="0 0 640 480" aria-hidden="true" focusable="false"></svg>
+              <div id="canvasHint" class="canvas-hint">
+                <span aria-hidden="true">🐾</span> おてほんをえらぶか、すきなえをかこう！
+              </div>
+            </div>
+            <p class="canvas-note">ゆびやマウスをうごかして かいてみよう！</p>
+          </div>
+
+          <aside class="tool-panel" aria-label="おえかきツール">
+            <section class="tool-section" aria-labelledby="color-title">
+              <div class="section-title-row">
+                <h2 id="color-title"><span aria-hidden="true">🌈</span> いろ</h2>
+                <span id="selectedColorName" class="selected-label" aria-live="polite"></span>
+              </div>
+              <div id="colorPalette" class="color-palette" role="group" aria-label="いろをえらぶ"></div>
+            </section>
+
+            <section class="tool-section" aria-labelledby="size-title">
+              <h2 id="size-title"><span aria-hidden="true">🖌️</span> ふでのふとさ</h2>
+              <div id="brushSizes" class="brush-sizes" role="group" aria-label="ふでのふとさをえらぶ">
+                <button class="size-button" type="button" data-size="6" aria-pressed="false">
+                  <span class="size-dot size-dot-small" aria-hidden="true"></span> ほそい
+                </button>
+                <button class="size-button is-selected" type="button" data-size="14" aria-pressed="true">
+                  <span class="size-dot size-dot-medium" aria-hidden="true"></span> ふつう
+                </button>
+                <button class="size-button" type="button" data-size="28" aria-pressed="false">
+                  <span class="size-dot size-dot-large" aria-hidden="true"></span> ふとい
+                </button>
+              </div>
+            </section>
+
+            <button id="eraserButton" class="eraser-button" type="button" aria-pressed="false">
+              <span aria-hidden="true">🧽</span> けしゴム
+            </button>
+            <p id="toolStatus" class="tool-status" aria-live="polite">あかいろ・ふつうのふで</p>
+          </aside>
+        </div>
+
+        <section class="guide-section" aria-labelledby="guide-title">
+          <div class="guide-heading">
+            <h2 id="guide-title"><span aria-hidden="true">🐶</span> おてほんをえらぼう</h2>
+            <p>もういちどおすと けせるよ</p>
+          </div>
+          <div id="guideButtons" class="guide-buttons" role="group" aria-label="おてほんをえらぶ"></div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>いろをぬって、じぶんだけのすてきなえにしよう！</p>
+      <a href="https://hosoden.github.io/">ポータルにもどる</a>
+    </footer>
+  </body>
+</html>
